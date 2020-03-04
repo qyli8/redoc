@@ -11,11 +11,10 @@ export const SearchWrap = styled.div`
 export const SearchInput = styled.input.attrs(() => ({
   className: 'search-input',
 }))`
-  width: calc(100% - ${props => props.theme.spacing.unit * 8}px);
+  width: calc(100% - ${props => props.theme.spacing.unit * 5}px);
   box-sizing: border-box;
-  margin: 0 ${props => props.theme.spacing.unit * 4}px;
-  padding: 5px ${props => props.theme.spacing.unit * 2}px 5px
-    ${props => props.theme.spacing.unit * 4}px;
+  margin: 0 ${props => props.theme.spacing.unit * 2}px;
+  padding: 12.5px ${props => props.theme.spacing.unit * 4}px;
   border: 0;
   border-bottom: 1px solid
     ${({ theme }) =>
@@ -26,9 +25,10 @@ export const SearchInput = styled.input.attrs(() => ({
   font-family: ${({ theme }) => theme.typography.fontFamily};
   font-weight: bold;
   font-size: 13px;
-  color: ${props => props.theme.menu.textColor};
-  background-color: transparent;
+  color: #2d3033;
+  background-color: #fafafb;
   outline: none;
+  border-radius: 3px;
 `;
 
 export const SearchIcon = styled((props: { className?: string }) => (
@@ -46,12 +46,13 @@ export const SearchIcon = styled((props: { className?: string }) => (
   className: 'search-icon',
 })`
   position: absolute;
-  left: ${props => props.theme.spacing.unit * 4}px;
-  height: 1.8em;
+  left: ${props => props.theme.spacing.unit * 3}px;
+  height: 2.8em;
   width: 0.9em;
-
+  color: #2d3033;
+  font-size: 15px;
   path {
-    fill: ${props => props.theme.menu.textColor};
+    fill: #2d3033;
   }
 `;
 

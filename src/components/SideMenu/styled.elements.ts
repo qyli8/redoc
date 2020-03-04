@@ -62,22 +62,22 @@ export const OperationBadge = styled.span.attrs((props: { type: string }) => ({
   }
 `;
 
-function menuItemActiveBg(depth, { theme }): string {
-  if (depth > 1) {
-    return darken(0.1, theme.menu.backgroundColor);
-  } else if (depth === 1) {
-    return darken(0.05, theme.menu.backgroundColor);
-  } else {
-    return '';
-  }
-}
+// function menuItemActiveBg(depth, { theme }): string {
+//   if (depth > 1) {
+//     return darken(0.1, theme.menu.backgroundColor);
+//   } else if (depth === 1) {
+//     return darken(0.05, theme.menu.backgroundColor);
+//   } else {
+//     return '';
+//   }
+// }
 
 export const MenuItemUl = styled.ul<{ expanded: boolean }>`
   margin: 0;
   padding: 0;
 
   & & {
-    font-size: 0.929em;
+    font-size: 15px;
   }
 
   ${props => (props.expanded ? '' : 'display: none;')};
@@ -95,13 +95,13 @@ export const menuItemDepth = {
   0: css`
     opacity: 0.7;
     text-transform: ${({ theme }) => theme.menu.groupItems.textTransform};
-    font-size: 0.8em;
+    font-size: 15px;
     padding-bottom: 0;
     cursor: default;
     color: ${props => props.theme.menu.textColor};
   `,
   1: css`
-    font-size: 0.929em;
+    font-size: 15px;
     text-transform: ${({ theme }) => theme.menu.level1Items.textTransform};
     &:hover {
       color: ${props => props.theme.menu.activeTextColor};
@@ -127,20 +127,23 @@ export const MenuItemLabel = styled.label.attrs((props: MenuItemLabelType) => ({
 }))<MenuItemLabelType>`
   cursor: pointer;
   color: ${props => (props.active ? props.theme.menu.activeTextColor : props.theme.menu.textColor)};
-  margin: 0;
+  margin: 0 ${props => props.theme.spacing.unit * 2}px;
+  font-weight: 550;
   padding: 12.5px ${props => props.theme.spacing.unit * 4}px;
+  width: calc(100% - ${props => props.theme.spacing.unit * 5}px);
   ${({ depth, type, theme }) =>
     (type === 'section' && depth > 1 && 'padding-left: ' + theme.spacing.unit * 8 + 'px;') || ''}
   display: flex;
   justify-content: space-between;
   font-family: ${props => props.theme.typography.headings.fontFamily};
   ${props => menuItemDepth[props.depth]};
-  background-color: ${props => (props.active ? menuItemActiveBg(props.depth, props) : '')};
+  background-color: ${props => (props.active ? '#be0d00' : '')};
+  border-radius: ${props => (props.active ? '3px' : '')};
 
   ${props => (props.deprecated && deprecatedCss) || ''};
 
   &:hover {
-    background-color: ${props => menuItemActiveBg(props.depth, props)};
+    background-color: '#be0d00';
   }
 
   ${ShelfIcon} {

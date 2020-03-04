@@ -13,6 +13,7 @@ import {
   InfoSpan,
   InfoSpanBox,
   InfoSpanBoxWrap,
+  BreadCrumb,
 } from './styled.elements';
 
 export interface ApiInfoProps {
@@ -74,6 +75,12 @@ export class ApiInfo extends React.Component<ApiInfoProps> {
       <Section>
         <Row>
           <MiddlePanel className="api-info">
+            <BreadCrumb>
+              <li>
+                <a href="#">Our APIs</a>
+              </li>
+              <li>Documentation</li>
+            </BreadCrumb>
             <ApiHeader>
               {info.title} {version}
             </ApiHeader>

@@ -49,3 +49,36 @@ export const InfoSpanBox = styled.div`
   // hide separator on new lines: idea from https://stackoverflow.com/a/31732902/1749888
   margin-left: -${delimiterWidth}px;
 `;
+
+export const BreadCrumb = styled.ul`
+  /* Style the list */
+
+  padding: 10px 16px;
+  list-style: none;
+  background-color: white;
+  display: flex;
+
+  /* Display list items side by side */
+  li {
+    font-size: 18px;
+  }
+
+  /* Add a slash symbol (/) before/behind each list item */
+  li + li:before {
+    padding: 8px;
+    color: black;
+    content: '>';
+  }
+
+  /* Add a color to all links inside the list */
+  ul li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+
+  /* Add a color on mouse-over */
+  ul li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+`;

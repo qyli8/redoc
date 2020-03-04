@@ -14,13 +14,14 @@ const defaultTheme: ThemeInterface = {
   colors: {
     tonalOffset: 0.3,
     primary: {
-      main: '#32329f',
+      main: 'black',
       light: ({ colors }) => lighten(colors.tonalOffset, colors.primary.main),
       dark: ({ colors }) => darken(colors.tonalOffset, colors.primary.main),
       contrastText: ({ colors }) => readableColor(colors.primary.main),
     },
     success: {
       main: '#00aa13',
+      // main: 'orange',
       light: ({ colors }) => lighten(colors.tonalOffset, colors.success.main),
       dark: ({ colors }) => darken(colors.tonalOffset, colors.success.main),
       contrastText: ({ colors }) => readableColor(colors.success.main),
@@ -94,16 +95,16 @@ const defaultTheme: ThemeInterface = {
     },
   },
   typography: {
-    fontSize: '14px',
+    fontSize: '600',
     lineHeight: '1.5em',
     fontWeightRegular: '400',
     fontWeightBold: '600',
     fontWeightLight: '300',
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: 'Open Sans, Helvetica Neue, Helventica, Arial, Microsoft Yahei, Roboto, sans-serif',
     smoothing: 'antialiased',
     optimizeSpeed: true,
     headings: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'Open Sans,Helvetica Neue, Helvetica,Arial, Microsoft Yahei',
       fontWeight: '400',
       lineHeight: '1.6em',
     },
@@ -124,12 +125,10 @@ const defaultTheme: ThemeInterface = {
   },
   menu: {
     width: '260px',
-    backgroundColor: '#fafafa',
-    textColor: '#333333',
+    backgroundColor: 'black',
+    textColor: 'white',
     activeTextColor: theme =>
-      theme.menu.textColor !== defaultTheme.menu!.textColor
-        ? theme.menu.textColor
-        : theme.colors.primary.main,
+      theme.menu.textColor !== defaultTheme.menu!.textColor ? theme.menu.textColor : 'white',
     groupItems: {
       textTransform: 'uppercase',
     },
